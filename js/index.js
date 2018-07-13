@@ -21,7 +21,7 @@ function onYouTubePlayerAPIReady(){
 }
 
 function onPlayerReady(){
-  tv.loadVideoById(vid[4]);
+  tv.loadVideoById(vid[currVid]);
 }
 
 function onPlayerStateChange(e) {
