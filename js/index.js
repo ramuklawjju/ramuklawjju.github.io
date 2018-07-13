@@ -8,7 +8,8 @@ var vid = [
 			{'videoId': '9ZfN87gSjvI', 'startSeconds': 18, 'endSeconds': 240, 'suggestedQuality': 'hd1080'},
 			{'videoId': 'AK-MUzWdpjU', 'startSeconds': 0, 'endSeconds': 162, 'suggestedQuality': 'hd1080'},
 			{'videoId': 'f-9ijiN31LI', 'startSeconds': 0, 'endSeconds': 342, 'suggestedQuality': 'hd1080'},
-			{'videoId': 'tdwbYGe8pv8', 'startSeconds': 19, 'endSeconds': 694, 'suggestedQuality': 'hd1080'}
+			{'videoId': 'tdwbYGe8pv8', 'startSeconds': 19, 'endSeconds': 694, 'suggestedQuality': 'hd1080'},
+			{'videoId': 'i_twPLPQq_s', 'startSeconds': 0, 'endSeconds': 124, 'suggestedQuality': '480'}
 		],
 		randomVid = Math.floor(Math.random() * vid.length),
     currVid = randomVid;
