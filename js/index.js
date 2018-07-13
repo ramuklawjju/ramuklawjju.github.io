@@ -8,7 +8,7 @@ var vid = [
 			{'videoId': '9ZfN87gSjvI', 'startSeconds': 18, 'endSeconds': 240, 'suggestedQuality': 'hd1080'},
 			{'videoId': 'AK-MUzWdpjU', 'startSeconds': 0, 'endSeconds': 162, 'suggestedQuality': 'hd1080'},
 			{'videoId': 'f-9ijiN31LI', 'startSeconds': 0, 'endSeconds': 342, 'suggestedQuality': 'hd1080'},
-			{'videoId': 'tdwbYGe8pv8', 'startSeconds': 19, 'endSeconds': 694, 'suggestedQuality': 'hd1080'},
+			{'videoId': 'jzpCOdN7mnU', 'startSeconds': 0, 'endSeconds': 632, 'suggestedQuality': 'hd720'},
 			{'videoId': 'i_twPLPQq_s', 'startSeconds': 0, 'endSeconds': 124, 'suggestedQuality': 'large'}
 		],
 		randomVid = Math.floor(Math.random() * vid.length),
@@ -21,7 +21,7 @@ function onYouTubePlayerAPIReady(){
 }
 
 function onPlayerReady(){
-  tv.loadVideoById(vid[currVid]);
+  tv.loadVideoById(vid[4]);
 }
 
 function onPlayerStateChange(e) {
