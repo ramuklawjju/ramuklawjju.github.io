@@ -5,10 +5,10 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 var tv,
 		playerDefaults = {autoplay: 0, autohide: 1, modestbranding: 0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
 var vid = [
-			{'videoId': 'ZRa6oVEfpAM', 'startSeconds': 06, 'endSeconds': 492, 'suggestedQuality': 'hd720'},
-			{'videoId': 'IbiswuZBWM8', 'startSeconds': 0, 'endSeconds': 708, 'suggestedQuality': 'hd720'},
+			{'videoId': 's7L2PVdrb_8', 'startSeconds': 0, 'endSeconds': 101, 'suggestedQuality': 'hd720'},
+			{'videoId': 'Ilsq_56EPZ0', 'startSeconds': 24, 'endSeconds': 180, 'suggestedQuality': 'hd720'},
 			{'videoId': 'HhtiL6s2zGU', 'startSeconds': 0, 'endSeconds': 342, 'suggestedQuality': 'hd720'},
-			{'videoId': 'jzpCOdN7mnU', 'startSeconds': 0, 'endSeconds': 632, 'suggestedQuality': 'hd720'}
+			{'videoId': 'tBRftVH2pCs', 'startSeconds': 0, 'endSeconds': 240, 'suggestedQuality': 'hd720'}
 		],
 		randomVid = Math.floor(Math.random() * vid.length),
     currVid = randomVid;
