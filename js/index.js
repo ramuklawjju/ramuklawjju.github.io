@@ -5,15 +5,15 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 var tv,
 		playerDefaults = {autoplay: 0, autohide: 1, modestbranding: 0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
 var vid = [
-			{'videoId': '9ZfN87gSjvI', 'startSeconds': 18, 'endSeconds': 240, 'suggestedQuality': 'hd2160'},
+			{'videoId': '9ZfN87gSjvI', 'startSeconds': 18, 'endSeconds': 240, 'suggestedQuality': 'hd1080'},
 			{'videoId': 'AK-MUzWdpjU', 'startSeconds': 0, 'endSeconds': 162, 'suggestedQuality': 'hd1080'},
-			{'videoId': 'f-9ijiN31LI', 'startSeconds': 0, 'endSeconds': 342, 'suggestedQuality': 'hd2160'},
-			{'videoId': 'tdwbYGe8pv8', 'startSeconds': 19, 'endSeconds': 694, 'suggestedQuality': 'hd2160'}
+			{'videoId': 'f-9ijiN31LI', 'startSeconds': 0, 'endSeconds': 342, 'suggestedQuality': 'hd1080'},
+			{'videoId': 'tdwbYGe8pv8', 'startSeconds': 19, 'endSeconds': 694, 'suggestedQuality': 'hd1080'}
 		],
 		randomVid = Math.floor(Math.random() * vid.length),
     currVid = randomVid;
 
-$('.hi em:last-of-type').html(vid.length);
+
 
 function onYouTubePlayerAPIReady(){
   tv = new YT.Player('tv', {events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, playerVars: playerDefaults});
@@ -21,7 +21,6 @@ function onYouTubePlayerAPIReady(){
 
 function onPlayerReady(){
   tv.loadVideoById(vid[currVid]);
-  tv.mute();
 }
 
 function onPlayerStateChange(e) {
@@ -58,17 +57,3 @@ $(window).on('load resize', function(){
   vidRescale();
 });
 
-$('.hi span:first-of-type').on('click', function(){
-  $('#tv').toggleClass('mute');
-  $('.hi em:first-of-type').toggleClass('hidden');
-  if($('#tv').hasClass('mute')){
-    tv.mute();
-  } else {
-    tv.unMute();
-  }
-});
-
-$('.hi span:last-of-type').on('click', function(){
-  $('.hi em:nth-of-type(2)').html('~');
-  tv.pauseVideo();
-});
