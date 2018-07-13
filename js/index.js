@@ -6,8 +6,8 @@ var tv,
 		playerDefaults = {autoplay: 0, autohide: 1, modestbranding: 0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
 var vid = [
 			{'videoId': '9ZfN87gSjvI', 'startSeconds': 18, 'endSeconds': 240, 'suggestedQuality': 'hd1080'},
-			{'videoId': 'AK-MUzWdpjU', 'startSeconds': 0, 'endSeconds': 162, 'suggestedQuality': 'hd1080'},
-			{'videoId': 'f-9ijiN31LI', 'startSeconds': 0, 'endSeconds': 342, 'suggestedQuality': 'hd1080'},
+			{'videoId': 'IbiswuZBWM8', 'startSeconds': 0, 'endSeconds': 708, 'suggestedQuality': 'hd720'},
+			{'videoId': 'HhtiL6s2zGU', 'startSeconds': 0, 'endSeconds': 342, 'suggestedQuality': 'hd720'},
 			{'videoId': 'jzpCOdN7mnU', 'startSeconds': 0, 'endSeconds': 632, 'suggestedQuality': 'hd720'},
 			{'videoId': 'i_twPLPQq_s', 'startSeconds': 0, 'endSeconds': 124, 'suggestedQuality': 'large'}
 		],
