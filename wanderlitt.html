@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Responsive Page Tabs</title>
+  <title>WanderLitt</title>
   <script src="//s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -255,6 +255,7 @@ a:hover {
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 
@@ -263,30 +264,29 @@ a:hover {
   <div id="tabs" class="tabs">
     <nav>
         <ul>
-            <li><a href="#section-1" class="fa fa-shopping-cart"><span>Shop</span></a></li>
+            <li><a href="#section-1" class="fa fa-shopping-cart"><span>Daily</span></a></li>
             <li><a href="#section-2" class="fa fa-coffee"><span>Drinks</span></a></li>
             <li><a href="#section-3" class="fa fa-cutlery"><span>Food</span></a></li>
             <li><a href="#section-4" class="fa fa-university"><span>Lab</span></a></li>
             <li><a href="#section-5" class="fa fa-truck"><span>Order</span></a></li>
         </ul>
     </nav>
+    <script>
+        $.getJSON('https://wanderlitt.herokuapp.com/findTheOne', function(data) {
+            
+            var text = `Name: ${data.name}<br>
+                        Date: ${data.winningDate}<br>
+                        Position: ${data.position}`
+                        
+            
+            $(".daily").html(text);
+        });
+        </script>   
     <div class="content">
         <section id="section-1">
-            <div class="mediabox">
-                <img src="https://tympanus.net/Blueprints/FullWidthTabs/img/01.png" alt="img01" />
-                <h3>Sushi Gumbo Beetroot</h3>
-                <p>Sushi gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato.</p>
-            </div>
-            <div class="mediabox">
-                <img src="https://tympanus.net/Blueprints/FullWidthTabs/img/02.png" alt="img02" />
-                <h3>Pea Sprouts Fava Soup</h3>
-                <p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea.</p>
-            </div>
-            <div class="mediabox">
-                <img src="https://tympanus.net/Blueprints/FullWidthTabs/img/03.png" alt="img03" />
-                <h3>Turnip Broccoli Sashimi</h3>
-                <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
-            </div>
+            <div class="daily">
+               </div>
+           
         </section>
         <section id="section-2">
             <div class="mediabox">
