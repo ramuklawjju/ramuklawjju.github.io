@@ -1,20 +1,20 @@
-
 /* HEADER */
 .masthead {
   /* Layout declarations */
   background: url("../img/bg/index.jpg") no-repeat fixed center;
   background-size: cover;
   padding: 1em 2em;
-  border-top: 8px solid #EDEDED;
+  border-top: 8px solid #ededed;
   text-align: right;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-               0px 8px 13px rgba(0,0,0,0.1),
-               0px 18px 23px rgba(0,0,0,0.1);
+  text-shadow:
+    0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
   /* Typography declarations */
   font-size: 4em;
   font-family: "Muli", "Helvetica Neue", "Arial", "sans-serif";
   font-weight: 300;
-  color: #EDEDED;
+  color: #ededed;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,7 +38,6 @@ section {
   margin-right: auto;
   margin-top: 3em;
   color: #000000;
-  
 }
 
 /* Gradient that runs through the body */
@@ -81,8 +80,8 @@ section p {
   /* Layout declarations */
   background: #000000;
   padding: 10em;
-  border-bottom: 8px solid #EDEDED;
-  color:#ffffff;
+  border-bottom: 8px solid #ededed;
+  color: #ffffff;
 }
 
 .content-footer > p {
@@ -110,7 +109,7 @@ section p {
 
 a {
   /* Typography declarations */
-  color: #EDEDED;
+  color: #ededed;
   text-decoration: none;
 }
 
@@ -135,53 +134,53 @@ a:hover {
   .masthead {
     padding: 1em;
   }
-  
+
   .masthead-intro {
     font-size: 1.5rem;
   }
-  
+
   .masthead-heading {
     font-size: 4rem;
   }
-  
+
   /* BODY */
   .gradient {
     padding: 5em;
   }
-  
+
   h2 {
     font-size: 2rem;
   }
-  
+
   h3 {
     font-size: 1.5rem;
   }
-  
+
   section p {
     font-size: 1rem;
   }
-  
+
   /* FOOTER */
   .content-footer {
     padding: 4em;
   }
-  
+
   .social > li {
-  /* Layout declarations */
-  display: block;
-  margin-right: 0;
+    /* Layout declarations */
+    display: block;
+    margin-right: 0;
   }
-  
+
   a {
     line-height: 3em;
   }
-  
+
   .content-footer p a {
     line-height: 0;
-  } 
+  }
 }
 
-  /* FOOTER */
+/* FOOTER */
 @media only screen and (max-width: 344px) {
   .content-footer p a {
     line-height: 3em;

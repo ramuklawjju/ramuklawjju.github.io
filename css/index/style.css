@@ -1,29 +1,28 @@
 body {
-
-	background-position: center center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-.logo-d{
-	text-align: center;
-	margin-top: 220px;
+.logo-d {
+  text-align: center;
+  margin-top: 220px;
 }
-.logo-d img{
-	width: 40%;
-	height: 40%;
+.logo-d img {
+  width: 40%;
+  height: 40%;
 }
-.line{
-	margin: 0 auto;
-	width: 45%;
-	height: 5px;
-	background: #fff;
-	border-radius: 20px 60px 20px 50px;
+.line {
+  margin: 0 auto;
+  width: 45%;
+  height: 5px;
+  background: #fff;
+  border-radius: 20px 60px 20px 50px;
 }
-#container #dock{
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
+#container #dock {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 #container {
   position: fixed;
@@ -45,7 +44,15 @@ body {
 #container li img {
   width: 50px;
   height: 50px;
-  -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, .5)));
+  -webkit-box-reflect: below
+    2px -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(transparent),
+      color-stop(0.7, transparent),
+      to(rgba(255, 255, 255, 0.5))
+    );
   -webkit-transition: all 0.3s;
   -webkit-transform-origin: 40% 70%;
 }
@@ -55,7 +62,7 @@ body {
   margin: 0 2em;
 }
 
-#container li:hover+li img,
+#container li:hover + li img,
 #container li.prev img {
   -webkit-transform: scale(1.5);
   margin: 0 1.5em;
@@ -75,4 +82,22 @@ body {
 #container li:hover span {
   display: block;
   color: #fff;
+}
+
+#container nav#dock ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Screen-reader-only utility */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
