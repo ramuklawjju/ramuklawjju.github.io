@@ -1,0 +1,25 @@
+{
+  "name": "ramuklawjju.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal portfolio site of Ujjwal (ramuklawjju), hosted on GitHub Pages.",
+  "homepage": "https://ramuklawjju.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramuklawjju/ramuklawjju.github.io.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "lint": "htmlhint \"*.html\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "test:smoke": "node --test test/*.test.js",
+    "test": "npm run lint && npm run format:check && npm run test:smoke"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.2.5"
+  }
+}

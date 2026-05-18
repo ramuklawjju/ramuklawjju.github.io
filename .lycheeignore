@@ -1,0 +1,4 @@
+# Ignore parameterised Formspree placeholder
+https://formspree.io/f/your-id
+# Heroku app that may be offline
+https://wanderlitt.herokuapp.com/.*
