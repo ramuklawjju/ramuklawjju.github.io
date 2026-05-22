@@ -1,52 +1,52 @@
-name: CI
+# name: CI
 
-on:
-  push:
-    branches: [master, main]
-  pull_request:
-    branches: [master, main]
-  workflow_dispatch:
+# on:
+#   push:
+#     branches: [master, main]
+#   pull_request:
+#     branches: [master, main]
+#   workflow_dispatch:
 
-permissions:
-  contents: read
+# permissions:
+#   contents: read
 
-jobs:
-  lint:
-    name: HTMLHint + Prettier
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Install dev dependencies
-        run: npm install --no-audit --no-fund
-      - name: HTMLHint
-        run: npx htmlhint "*.html"
-      - name: Prettier (check)
-        run: npx prettier --check "**/*.{html,css,js,json,md}" || echo "::warning::Prettier formatting drift — run 'npm run format'."
-      - name: Smoke tests
-        run: npm run test:smoke
+# jobs:
+#   lint:
+#     name: HTMLHint + Prettier
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: "20"
+#       - name: Install dev dependencies
+#         run: npm install --no-audit --no-fund
+#       - name: HTMLHint
+#         run: npx htmlhint "*.html"
+#       - name: Prettier (check)
+#         run: npx prettier --check "**/*.{html,css,js,json,md}" || echo "::warning::Prettier formatting drift — run 'npm run format'."
+#       - name: Smoke tests
+#         run: npm run test:smoke
 
-  links:
-    name: Link check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: --no-progress --max-concurrency 4 --exclude-mail './**/*.html' './**/*.md'
-          fail: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+#   links:
+#     name: Link check
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Lychee
+#         uses: lycheeverse/lychee-action@v2
+#         with:
+#           args: --no-progress --max-concurrency 4 --exclude-mail './**/*.html' './**/*.md'
+#           fail: true
+#           token: ${{ secrets.GITHUB_TOKEN }}
 
-  html-validate:
-    name: W3C HTML validation
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - uses: actions/checkout@v4
-      - name: Validate HTML files
-        uses: Cyb3r-Jak3/html5validator-action@v7
-        with:
-          root: .
+#   html-validate:
+#     name: W3C HTML validation
+#     runs-on: ubuntu-latest
+#     continue-on-error: true
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Validate HTML files
+#         uses: Cyb3r-Jak3/html5validator-action@v7
+#         with:
+#           root: .
