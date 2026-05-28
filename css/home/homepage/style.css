@@ -1,11 +1,14 @@
-html,
-body {
+/* Home page — bouncing logo */
+
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background: #fff;
+  background: radial-gradient(circle at 50% 35%, #ffffff 0%, #eef2f7 100%);
   color: rgba(0, 0, 0, 0.87);
-  overflow-y: hidden;
+  overflow: hidden;
+  font-family: "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+              Roboto, sans-serif;
 }
 
 #logo {
@@ -14,102 +17,59 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
-  font:
-    normal bold 6rem "Product Sans",
-    sans-serif;
+  font: normal bold 6rem "Product Sans", sans-serif;
   white-space: nowrap;
+  letter-spacing: -0.02em;
+  user-select: none;
 }
 
-.letter {
-  -webkit-animation: bounce 0.75s cubic-bezier(0.05, 0, 0.2, 1) infinite alternate;
+#letter {
   animation: bounce 0.75s cubic-bezier(0.05, 0, 0.2, 1) infinite alternate;
   display: inline-block;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   margin-top: 0.5em;
   text-shadow: rgba(0, 0, 0, 0.45) 0 0 0.025em;
-  font:
-    normal bold 6rem "Product Sans",
-    sans-serif;
-}
-.letter:nth-child(1) {
-  -webkit-animation-delay: 0.0857142857s;
-  animation-delay: 0.0857142857s;
-  color: #4285f4;
-}
-.letter:nth-child(2) {
-  -webkit-animation-delay: 0.1714285714s;
-  animation-delay: 0.1714285714s;
-  color: #ea4335;
-}
-.letter:nth-child(3) {
-  -webkit-animation-delay: 0.2571428571s;
-  animation-delay: 0.2571428571s;
-  color: #fbbc05;
-}
-.letter:nth-child(4) {
-  -webkit-animation-delay: 0.3428571429s;
-  animation-delay: 0.3428571429s;
-  color: #4285f4;
-}
-.letter:nth-child(5) {
-  -webkit-animation-delay: 0.4285714286s;
-  animation-delay: 0.4285714286s;
-  color: #34a853;
-}
-.letter:nth-child(6) {
-  -webkit-animation-delay: 0.0857142857s;
-  animation-delay: 0.0857142857s;
-  color: #ea4335;
-}
-.letter:nth-child(7) {
-  -webkit-animation-delay: 0.1714285714s;
-  animation-delay: 0.1714285714s;
-  color: #4285f4;
-}
-.letter:nth-child(8) {
-  -webkit-animation-delay: 0.2571428571s;
-  animation-delay: 0.2571428571s;
-  color: #ea4335;
-}
-.letter:nth-child(9) {
-  -webkit-animation-delay: 0.3428571429s;
-  animation-delay: 0.3428571429s;
-  color: #fbbc05;
-}
-.letter:nth-child(10) {
-  -webkit-animation-delay: 0.4285714286s;
-  animation-delay: 0.4285714286s;
-  color: #4285f4;
-}
-.letter:nth-child(11) {
-  -webkit-animation-delay: 0.5142857143s;
-  animation-delay: 0.5142857143s;
-  color: #34a853;
+  font: normal bold 6rem "Product Sans", sans-serif;
+  transition: transform 0.2s ease;
 }
 
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    text-shadow: rgba(0, 0, 0, 0.45) 0 0 0.025em;
-  }
-  100% {
-    -webkit-transform: translate3d(0, -1em, 0);
-    transform: translate3d(0, -1em, 0);
-    text-shadow: rgba(0, 0, 0, 0.45) 0 1em 0.35em;
-  }
+#letter:hover {
+  animation-play-state: paused;
 }
+
+#letter:nth-child(1)  { animation-delay: 0.085s;  color: #4285f4; }
+#letter:nth-child(2)  { animation-delay: 0.171s;  color: #ea4335; }
+#letter:nth-child(3)  { animation-delay: 0.257s;  color: #fbbc05; }
+#letter:nth-child(4)  { animation-delay: 0.343s;  color: #4285f4; }
+#letter:nth-child(5)  { animation-delay: 0.428s;  color: #34a853; }
+#letter:nth-child(6)  { animation-delay: 0.085s;  color: #ea4335; }
+#letter:nth-child(7)  { animation-delay: 0.171s;  color: #4285f4; }
+#letter:nth-child(8)  { animation-delay: 0.257s;  color: #ea4335; }
+#letter:nth-child(9)  { animation-delay: 0.343s;  color: #fbbc05; }
+#letter:nth-child(10) { animation-delay: 0.428s;  color: #4285f4; }
+#letter:nth-child(11) { animation-delay: 0.514s;  color: #34a853; }
 
 @keyframes bounce {
   0% {
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     text-shadow: rgba(0, 0, 0, 0.45) 0 0 0.025em;
   }
   100% {
-    -webkit-transform: translate3d(0, -1em, 0);
     transform: translate3d(0, -1em, 0);
-    text-shadow: rgba(0, 0, 0, 0.45) 0 1em 0.35em;
+    text-shadow: rgba(0, 0, 0, 0.35) 0 1em 0.35em;
   }
+}
+
+@media (max-width: 700px) {
+  #logo,
+  #letter { font-size: 3rem; }
+}
+
+@media (max-width: 380px) {
+  #logo,
+  #letter { font-size: 2.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #letter { animation: none; margin-top: 0; }
 }

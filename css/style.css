@@ -1,188 +1,160 @@
+/* About page styles */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #111;
+  color: #1a1a1a;
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-bottom: 110px; /* leave space for floating dock */
+}
+
 /* HEADER */
 .masthead {
-  /* Layout declarations */
-  background: url("../img/bg/index.jpg") no-repeat fixed center;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 100%),
+    url("../img/bg/index.jpg") no-repeat fixed center;
   background-size: cover;
-  padding: 1em 2em;
-  border-top: 8px solid #ededed;
+  padding: 6rem 2rem 4rem;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   text-align: right;
   text-shadow:
-    0px 4px 3px rgba(0, 0, 0, 0.4),
-    0px 8px 13px rgba(0, 0, 0, 0.1),
-    0px 18px 23px rgba(0, 0, 0, 0.1);
-  /* Typography declarations */
-  font-size: 4em;
-  font-family: "Muli", "Helvetica Neue", "Arial", "sans-serif";
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    0 8px 24px rgba(0, 0, 0, 0.35);
   font-weight: 300;
   color: #ededed;
-  -webkit-font-smoothing: antialiased;
 }
 
 .masthead-intro {
-  margin: 2em 0 0 0;
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  opacity: 0.85;
 }
 
 .masthead-heading {
-  /* Typography declarations */
-  font-size: 6rem;
-  /* Layout declarations */
+  font-size: clamp(3rem, 9vw, 6rem);
   padding: 0;
-  margin: 0 0 1em;
+  margin: 0.25em 0 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
 }
+
 /* BODY */
-/* General styling for the three sections of the body */
-section {
-  /* Layout declarations */
-  max-width: 50em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3em;
-  color: #000000;
-}
-
-/* Gradient that runs through the body */
 .gradient {
-  padding: 10em;
-  /* can be treated like a fallback */
-  background-color: #ffffff;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(#ffffff, #ffffff);
+  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
+  background: #fafafa;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f3f5f8 100%);
 }
 
-/* The h2 tags are the main categories */
+section {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  color: #1f2329;
+}
+
+section + section {
+  border-top: 1px solid #e5e8ec;
+}
+
 h2 {
-  /* Typography declarations */
-  font-size: 4em;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0 0 0.6em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #111;
 }
 
-/* The h3 tags are the additional questions */
 h3 {
-  /* Typography declarations */
   font-style: italic;
-  font-size: 2.5em;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  margin: 1.5em 0 0.4em;
+  color: #2a2f36;
+  font-weight: 500;
 }
 
-/* The p tags that are descendants of the section tags are the answers */
 section p {
-  /* Typography declarations */
-  font-size: 2em;
-  line-height: 1.3em;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 1em;
+  color: #3a4049;
 }
 
-/* This class is included in the last p tag of each section to create more space */
 .space-maker {
-  /* Layout declarations */
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
 }
 
 /* FOOTER */
 .content-footer {
-  /* Layout declarations */
-  background: #000000;
-  padding: 10em;
-  border-bottom: 8px solid #ededed;
-  color: #ffffff;
+  background: #0e0e10;
+  padding: 3rem 1.5rem 4.5rem;
+  color: #ededed;
+  text-align: center;
 }
 
 .content-footer > p {
-  /* Layout declarations */
-  line-height: 1.3em;
-  text-align: center;
-  /* Typography declarations */
-  font-size: 2em;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  margin: 0 0 1.25em;
+  opacity: 0.85;
 }
 
 .social {
-  /* Layout declarations */
+  list-style: none;
   text-align: center;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 .social > li {
-  /* Layout declarations */
   display: inline-block;
-  line-height: 1.3em;
-  margin-right: 2em;
-  /* Typography declarations */
-  font-size: 2em;
+  font-size: 1rem;
+}
+
+.social a {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #ededed;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.social a:hover {
+  background: #ededed;
+  color: #111;
+  border-color: #ededed;
+  transform: translateY(-2px);
 }
 
 a {
-  /* Typography declarations */
-  color: #ededed;
+  color: #1f6feb;
   text-decoration: none;
 }
 
 a:hover {
-  /* Layout declarations */
-  color: #262626;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  color: #0a3d91;
 }
 
-.social li:last-child {
-  /* Layout declarations */
-  margin-right: 0;
-}
-
-/* Responsive design */
-@media only screen and (max-width: 500px) {
-  /* HEADER */
+@media (max-width: 500px) {
   .masthead {
-    padding: 1em;
+    padding: 4rem 1.25rem 2.5rem;
+    text-align: left;
   }
-
-  .masthead-intro {
-    font-size: 1.5rem;
-  }
-
-  .masthead-heading {
-    font-size: 4rem;
-  }
-
-  /* BODY */
-  .gradient {
-    padding: 5em;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  section p {
-    font-size: 1rem;
-  }
-
-  /* FOOTER */
-  .content-footer {
-    padding: 4em;
-  }
-
-  .social > li {
-    /* Layout declarations */
-    display: block;
-    margin-right: 0;
-  }
-
-  a {
-    line-height: 3em;
-  }
-
-  .content-footer p a {
-    line-height: 0;
-  }
-}
-
-/* FOOTER */
-@media only screen and (max-width: 344px) {
-  .content-footer p a {
-    line-height: 3em;
-  }
+  .gradient { padding: 1.5rem 1.25rem; }
+  .content-footer { padding: 2.5rem 1rem 5rem; }
 }
